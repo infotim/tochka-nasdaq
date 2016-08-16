@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block body %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Insider</td>
+            <td>Relation</td>
+            <td>Date</td>
+            <td>Transaction type</td>
+            <td>Owner type</td>
+            <td>Shares traded</td>
+            <td>Price</td>
+            <td>Shares held</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for trade in data %}
+        <tr>
+            <td>
+                <a href="{{ url_for('list_insider', ticker=trade['ticker'], insider=trade['insider']) }}">
+                {{ trade['insider'] }}
+                </a>
+            </td>
+            <td>{{ trade['relation'] }}</td>
+            <td>{{ trade['date'] }}</td>
+            <td>{{ trade['transaction'] }}</td>
+            <td>{{ trade['owner'] }}</td>
+            <td>{{ trade['traded'] }}</td>
+            <td>{{ trade['price'] }}</td>
+            <td>{{ trade['held'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

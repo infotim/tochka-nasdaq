@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<ul class="nav nav-pills">
+    {% for ticker in data %}
+    <li role="presentation">
+        <a href="{{ url_for('list_ticker_history', ticker=ticker) }}">
+        {{ ticker }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

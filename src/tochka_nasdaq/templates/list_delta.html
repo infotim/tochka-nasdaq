@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Date from</td>
+            <td>Date to</td>
+            <td>Diff</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr class="{% if item['diff'] > 0 %} success {% else %} danger {% endif %}">
+            <td>{{ item['date_from'] }}</td>
+            <td>{{ item['date_to'] }}</td>
+            <td>{{ item['diff'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

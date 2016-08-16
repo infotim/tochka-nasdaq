@@ -1,0 +1,4 @@
+imput.txt
+.*
+*.egg-info
+__pycache__

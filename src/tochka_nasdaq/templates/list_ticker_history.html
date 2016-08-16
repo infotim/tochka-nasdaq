@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Date</td>
+            <td>Open</td>
+            <td>High</td>
+            <td>Low</td>
+            <td>Close</td>
+            <td>Volume</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for quote in data %}
+        <tr>
+            <td>{{ quote['date'] }}</td>
+            <td>{{ quote['open'] }}</td>
+            <td>{{ quote['high'] }}</td>
+            <td>{{ quote['low'] }}</td>
+            <td>{{ quote['close'] }}</td>
+            <td>{{ quote['volume'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Date from</td>
+            <td>Date to</td>
+            <td>Diff open</td>
+            <td>Diff high</td>
+            <td>Diff low</td>
+            <td>Diff close</td>
+            <td>Diff volume</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr>
+            <td>{{ item['date_from'] }}</td>
+            <td>{{ item['date_to'] }}</td>
+            <td>{{ item['diff_open'] }}</td>
+            <td>{{ item['diff_high'] }}</td>
+            <td>{{ item['diff_low'] }}</td>
+            <td>{{ item['diff_close'] }}</td>
+            <td>{{ item['diff_volume'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
